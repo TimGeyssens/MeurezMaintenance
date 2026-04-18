@@ -1,0 +1,58 @@
+# Meurez Maintenance
+
+> Meurez Maintenance is een Belgisch bedrijf uit Anzegem (West-Vlaanderen), gespecialiseerd in industrieel onderhoud, laswerken, montage, piping en constructiewerk. Slogan: "Sterk in zwaar werk. Nauwkeurig in afwerking."
+
+Meurez Maintenance levert industriële diensten aan bedrijven in België: preventief en curatief onderhoud, dringende depannage, montage en demontage van machines, laswerk op maat (TIG, MIG, elektrode) in staal, inox en aluminium, industriële plaatsingen, constructiewerk en piping. De onderneming werkt flexibel, met korte lijnen en een eerlijke aanpak.
+
+## Bedrijfsgegevens
+- **Naam:** Meurez Maintenance
+- **Sector:** Industriële werken / industrieel onderhoud
+- **Land:** België (BE)
+- **Regio:** West-Vlaanderen
+- **Adres:** Mekeirleweg 19, 8570 Anzegem, België
+- **Telefoon:** +32 471 09 87 20
+- **E-mail:** jens.meurez@gmail.com
+- **Werkgebied:** Heel België
+- **Openingsuren:** Maandag – Vrijdag: 07:00 – 18:00; Za/Zo op afspraak
+- **Taal website:** Nederlands (nl-BE)
+
+## Diensten
+- **Onderhoud & Herstellingen** — Preventief en curatief onderhoud van machines, installaties en industriële uitrusting.
+- **Montage & Demontage** — Professionele montage en demontage van productielijnen en industriële installaties.
+- **Laswerken & Maatwerk** — TIG, MIG en elektrode laswerk op maat — voor staal, inox en aluminium.
+- **Industriële Plaatsingen** — Plaatsen en uitlijnen van machines, leidingen en industriële structuren.
+- **Depannage** — Snelle interventie bij storingen of pannes; 24/7 beschikbaar om stilstand te beperken.
+- **Constructiewerk** — Staalconstructies, frames en draagstructuren volgens plan of specificaties.
+- **Piping** — Aanleg, aanpassing en onderhoud van industriële leidingsystemen.
+
+## Doelgroep
+Industriële bedrijven, productiesites, KMO's en aannemers in België die op zoek zijn naar een betrouwbare partner voor industrieel onderhoud, laswerk, montagewerk en constructie.
+
+## Sterke punten
+- Meer dan 10 jaar ervaring in industriële werken.
+- 100+ gerealiseerde projecten.
+- 24/7 depannageservice bij storingen.
+- 100% maatwerk en nauwkeurige afwerking.
+- Korte lijnen, flexibele planning, eerlijke aanpak.
+- Focus op kwaliteit, veiligheid en deadlines.
+
+## Belangrijke pagina's / secties (single-page)
+- [Hero / Welkom](index.html#top): Introductie en oproep tot actie.
+- [Over ons](index.html#over): Bedrijfsinformatie, ervaring en kerncijfers.
+- [Diensten](index.html#diensten): Overzicht van alle aangeboden industriële diensten.
+- [Realisaties](index.html#realisaties): Fotogalerij van uitgevoerde projecten.
+- [Galerij](index.html#galerij): Slider met laswerk en maatwerk in detail.
+- [Contact](index.html#contact): Contactgegevens, adres, openingsuren en contactformulier.
+
+## Contact & Offerte
+Voor een vrijblijvende offerte of technische vraag:
+- Bel: +32 471 09 87 20
+- Mail: jens.meurez@gmail.com
+- Bezoek: Mekeirleweg 19, 8570 Anzegem, België
+
+## Metadata
+- **Type:** LocalBusiness (schema.org)
+- **Website taal:** nl
+- **Responsive:** Ja (mobile-first)
+- **SEO:** Open Graph, Twitter Cards, JSON-LD LocalBusiness, canonical URL
+- **Bestandsstructuur:** Single-page site (`index.html`) met afbeeldingen in `images/` en aanvullende foto's (`foto1.jpg` – `foto4.jpg`) in de root.

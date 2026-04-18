@@ -1,0 +1,6 @@
+User-agent: *
+Allow: /
+
+# AI / LLM context file
+# See: https://llmstxt.org
+Sitemap: https://www.meurez-maintenance.be/sitemap.xml

@@ -1,0 +1,876 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#0f0f0f">
+
+<!-- Primaire SEO -->
+<title>Meurez Maintenance | Industrieel onderhoud, laswerken &amp; constructie in Anzegem</title>
+<meta name="description" content="Meurez Maintenance uit Anzegem (West-Vlaanderen) staat voor industrieel onderhoud, herstellingen, laswerken, montage, piping en constructiewerk. Sterk in zwaar werk, nauwkeurig in afwerking.">
+<meta name="keywords" content="industrieel onderhoud, laswerken, constructiewerk, piping, montage, depannage, Anzegem, West-Vlaanderen, Meurez Maintenance, industriële plaatsingen">
+<meta name="author" content="Meurez Maintenance">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://www.meurez-maintenance.be/">
+<link rel="icon" type="image/png" href="images/logo.png">
+<link rel="apple-touch-icon" href="images/logo.png">
+
+<!-- AI / LLM context -->
+<link rel="alternate" type="text/markdown" title="Meurez Maintenance – LLM context" href="llms.txt">
+
+<!-- Open Graph / Facebook -->
+<meta property="og:type" content="website">
+<meta property="og:locale" content="nl_BE">
+<meta property="og:url" content="https://www.meurez-maintenance.be/">
+<meta property="og:title" content="Meurez Maintenance | Industrieel onderhoud &amp; laswerken">
+<meta property="og:description" content="Sterk in zwaar werk. Nauwkeurig in afwerking. Industrieel onderhoud, laswerken, montage, piping en constructiewerk in Anzegem.">
+<meta property="og:image" content="images/mechanic2.jpg">
+<meta property="og:site_name" content="Meurez Maintenance">
+
+<!-- Twitter -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Meurez Maintenance | Industrieel onderhoud &amp; laswerken">
+<meta name="twitter:description" content="Industrieel onderhoud, laswerken, montage, piping en constructiewerk in Anzegem.">
+<meta name="twitter:image" content="images/mechanic2.jpg">
+
+<!-- Preconnect voor fonts -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Oswald:wght@500;600;700&display=swap" rel="stylesheet">
+
+<!-- Structured Data: LocalBusiness -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "LocalBusiness",
+  "name": "Meurez Maintenance",
+  "image": "images/logo.png",
+  "url": "https://www.meurez-maintenance.be/",
+  "telephone": "+32 471 09 87 20",
+  "email": "jens.meurez@gmail.com",
+  "priceRange": "€€",
+  "description": "Industrieel onderhoud, herstellingen, laswerken, montage, piping en constructiewerk.",
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "Mekeirleweg 19",
+    "postalCode": "8570",
+    "addressLocality": "Anzegem",
+    "addressCountry": "BE"
+  },
+  "areaServed": "BE",
+  "openingHoursSpecification": [{
+    "@type": "OpeningHoursSpecification",
+    "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday"],
+    "opens": "07:00",
+    "closes": "18:00"
+  }]
+}
+</script>
+
+<style>
+/* ---------- RESET ---------- */
+*, *::before, *::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --bg: #0b0b0c;
+  --bg-alt: #141416;
+  --bg-card: #1b1b1e;
+  --border: #2a2a2d;
+  --text: #f5f5f7;
+  --muted: #a3a3a8;
+  --accent: #dc2e2e;
+  --accent-dark: #a31f1f;
+  --accent-glow: rgba(220, 46, 46, 0.35);
+  --radius: 10px;
+  --maxw: 1200px;
+  --shadow: 0 10px 30px rgba(0,0,0,0.4);
+  --transition: 0.3s ease;
+}
+
+html { scroll-behavior: smooth; }
+
+body {
+  background: var(--bg);
+  color: var(--text);
+  font-family: 'Inter', Arial, sans-serif;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+  overflow-x: hidden;
+}
+
+img { display: block; max-width: 100%; height: auto; }
+
+a { color: inherit; text-decoration: none; }
+
+h1, h2, h3 {
+  font-family: 'Oswald', Arial, sans-serif;
+  letter-spacing: 0.5px;
+  line-height: 1.15;
+  text-transform: uppercase;
+}
+
+h2 {
+  font-size: clamp(1.8rem, 3.2vw, 2.6rem);
+  margin-bottom: 0.5rem;
+}
+
+.eyebrow {
+  display: inline-block;
+  color: var(--accent);
+  font-weight: 700;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  font-size: 0.8rem;
+  margin-bottom: 10px;
+}
+
+.section-subtitle {
+  color: var(--muted);
+  max-width: 640px;
+  margin: 0 auto 2.5rem;
+  font-size: 1rem;
+}
+
+.container {
+  max-width: var(--maxw);
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+/* ---------- HEADER ---------- */
+header {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  background: rgba(11, 11, 12, 0.85);
+  backdrop-filter: saturate(160%) blur(10px);
+  -webkit-backdrop-filter: saturate(160%) blur(10px);
+  border-bottom: 1px solid var(--border);
+}
+
+.nav-wrap {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 14px 20px;
+  max-width: var(--maxw);
+  margin: 0 auto;
+}
+
+.logo {
+  height: 50px;
+  width: auto;
+}
+
+nav.primary {
+  display: flex;
+  align-items: center;
+  gap: 28px;
+}
+
+nav.primary a {
+  color: var(--text);
+  font-weight: 600;
+  font-size: 0.95rem;
+  position: relative;
+  transition: color var(--transition);
+}
+
+nav.primary a:not(.btn)::after {
+  content: '';
+  position: absolute;
+  left: 0; bottom: -6px;
+  width: 0; height: 2px;
+  background: var(--accent);
+  transition: width var(--transition);
+}
+
+nav.primary a:not(.btn):hover { color: var(--accent); }
+nav.primary a:not(.btn):hover::after { width: 100%; }
+
+.btn {
+  display: inline-block;
+  background: var(--accent);
+  color: #fff;
+  padding: 11px 22px;
+  border-radius: var(--radius);
+  font-weight: 700;
+  font-size: 0.95rem;
+  border: none;
+  cursor: pointer;
+  transition: transform var(--transition), background var(--transition), box-shadow var(--transition);
+  box-shadow: 0 6px 18px var(--accent-glow);
+}
+.btn:hover {
+  background: var(--accent-dark);
+  transform: translateY(-2px);
+  box-shadow: 0 10px 22px var(--accent-glow);
+}
+.btn.ghost {
+  background: transparent;
+  border: 2px solid var(--text);
+  box-shadow: none;
+}
+.btn.ghost:hover {
+  background: var(--text);
+  color: var(--bg);
+}
+
+/* Hamburger */
+.menu-toggle {
+  display: none;
+  background: none;
+  border: none;
+  color: var(--text);
+  font-size: 1.8rem;
+  cursor: pointer;
+  padding: 4px 8px;
+}
+
+/* ---------- HERO ---------- */
+.hero {
+  min-height: 92vh;
+  background:
+    linear-gradient(rgba(0,0,0,0.75), rgba(0,0,0,0.85)),
+    url('images/mechanic2.jpg') center/cover no-repeat;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 100px 20px;
+  position: relative;
+}
+
+.hero::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(ellipse at center, transparent 0%, rgba(0,0,0,0.6) 100%);
+  pointer-events: none;
+}
+
+.hero-inner { position: relative; z-index: 1; max-width: 820px; }
+
+.hero h1 {
+  font-size: clamp(2.2rem, 6vw, 4.2rem);
+  margin-bottom: 18px;
+}
+
+.hero p {
+  font-size: clamp(1rem, 1.6vw, 1.25rem);
+  color: #e5e5e7;
+  margin-bottom: 32px;
+}
+
+.hero .actions { display: flex; gap: 14px; justify-content: center; flex-wrap: wrap; }
+
+/* ---------- SECTIONS ---------- */
+.section {
+  padding: 90px 0;
+  text-align: center;
+}
+.section.dark { background: var(--bg-alt); }
+
+.section-header { margin-bottom: 50px; }
+
+/* ---------- OVER ONS / STATS ---------- */
+.about-grid {
+  display: grid;
+  grid-template-columns: 1.1fr 1fr;
+  gap: 50px;
+  text-align: left;
+  align-items: center;
+}
+.about-grid img {
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  width: 100%;
+  aspect-ratio: 4/3;
+  object-fit: cover;
+}
+.about-text p { color: var(--muted); margin-bottom: 16px; }
+.about-text h2 { text-align: left; }
+
+.stats {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+  margin-top: 30px;
+}
+.stat {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  padding: 20px;
+  border-radius: var(--radius);
+  text-align: center;
+}
+.stat strong {
+  font-family: 'Oswald', sans-serif;
+  font-size: 2rem;
+  color: var(--accent);
+  display: block;
+}
+.stat span { color: var(--muted); font-size: 0.9rem; }
+
+/* ---------- DIENSTEN ---------- */
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 22px;
+  text-align: left;
+}
+
+.card {
+  background: var(--bg-card);
+  padding: 28px 24px;
+  border-radius: var(--radius);
+  border: 1px solid var(--border);
+  border-left: 4px solid var(--accent);
+  transition: transform var(--transition), box-shadow var(--transition), border-color var(--transition);
+}
+.card:hover {
+  transform: translateY(-6px);
+  box-shadow: var(--shadow);
+  border-left-color: #ff6363;
+}
+.card .icon {
+  width: 46px; height: 46px;
+  display: flex; align-items: center; justify-content: center;
+  background: rgba(220, 46, 46, 0.12);
+  color: var(--accent);
+  border-radius: 8px;
+  margin-bottom: 16px;
+  font-size: 1.4rem;
+  font-weight: 700;
+}
+.card h3 {
+  font-size: 1.15rem;
+  margin-bottom: 8px;
+  text-transform: none;
+  letter-spacing: 0;
+}
+.card p { color: var(--muted); font-size: 0.95rem; }
+
+/* ---------- GALERIJ ---------- */
+.gallery {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 14px;
+}
+.gallery figure {
+  overflow: hidden;
+  border-radius: var(--radius);
+  position: relative;
+}
+.gallery img {
+  width: 100%;
+  height: 280px;
+  object-fit: cover;
+  transition: transform 0.5s ease;
+}
+.gallery figure:hover img { transform: scale(1.07); }
+.gallery figure::after {
+  content: '';
+  position: absolute; inset: 0;
+  background: linear-gradient(to top, rgba(0,0,0,0.6), transparent 60%);
+  opacity: 0;
+  transition: opacity var(--transition);
+}
+.gallery figure:hover::after { opacity: 1; }
+
+/* ---------- SLIDER ---------- */
+.slider {
+  position: relative;
+  max-width: 960px;
+  margin: 0 auto;
+  border-radius: var(--radius);
+  overflow: hidden;
+  box-shadow: var(--shadow);
+}
+.slide { display: none; }
+.slide.active { display: block; }
+.slide img {
+  width: 100%;
+  height: clamp(260px, 55vw, 520px);
+  object-fit: cover;
+}
+
+.slider-btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: rgba(0,0,0,0.55);
+  color: #fff;
+  border: none;
+  font-size: 1.5rem;
+  width: 48px; height: 48px;
+  border-radius: 50%;
+  cursor: pointer;
+  transition: background var(--transition);
+  display: flex; align-items: center; justify-content: center;
+  z-index: 2;
+}
+.slider-btn:hover { background: var(--accent); }
+.prev { left: 14px; }
+.next { right: 14px; }
+
+.dots {
+  display: flex;
+  justify-content: center;
+  gap: 8px;
+  margin-top: 18px;
+}
+.dot {
+  width: 10px; height: 10px;
+  border-radius: 50%;
+  background: #3a3a3d;
+  border: none;
+  cursor: pointer;
+  transition: background var(--transition), transform var(--transition);
+}
+.dot.active { background: var(--accent); transform: scale(1.2); }
+
+/* ---------- CONTACT ---------- */
+.contact-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 40px;
+  text-align: left;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.contact-info {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  padding: 30px;
+  border-radius: var(--radius);
+}
+.contact-info h3 {
+  font-size: 1.25rem;
+  margin-bottom: 18px;
+  text-transform: none;
+}
+.contact-info ul { list-style: none; }
+.contact-info li {
+  display: flex;
+  align-items: flex-start;
+  gap: 14px;
+  margin-bottom: 16px;
+  color: var(--muted);
+}
+.contact-info li strong {
+  color: var(--text);
+  display: block;
+  margin-bottom: 2px;
+}
+.contact-info a:hover { color: var(--accent); }
+.contact-info .ico {
+  flex-shrink: 0;
+  width: 38px; height: 38px;
+  background: rgba(220, 46, 46, 0.12);
+  color: var(--accent);
+  display: flex; align-items: center; justify-content: center;
+  border-radius: 8px;
+  font-weight: 700;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+label { font-size: 0.9rem; color: var(--muted); }
+input, textarea {
+  padding: 13px 14px;
+  border-radius: 8px;
+  border: 1px solid var(--border);
+  background: var(--bg-card);
+  color: var(--text);
+  font-family: inherit;
+  font-size: 1rem;
+  transition: border-color var(--transition), box-shadow var(--transition);
+  width: 100%;
+}
+input:focus, textarea:focus {
+  outline: none;
+  border-color: var(--accent);
+  box-shadow: 0 0 0 3px var(--accent-glow);
+}
+textarea { min-height: 130px; resize: vertical; }
+form button { align-self: flex-start; }
+
+/* ---------- FOOTER ---------- */
+footer {
+  background: #050506;
+  padding: 36px 20px 24px;
+  text-align: center;
+  border-top: 1px solid var(--border);
+  color: var(--muted);
+  font-size: 0.9rem;
+}
+footer .foot-links {
+  margin-bottom: 10px;
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+footer .foot-links a:hover { color: var(--accent); }
+
+/* ---------- RESPONSIVE ---------- */
+@media (max-width: 860px) {
+  .about-grid { grid-template-columns: 1fr; }
+  .about-text h2 { text-align: center; }
+  .contact-grid { grid-template-columns: 1fr; }
+  .stats { grid-template-columns: repeat(2, 1fr); }
+}
+
+@media (max-width: 720px) {
+  .menu-toggle { display: block; }
+  nav.primary {
+    position: fixed;
+    top: 78px;
+    right: 0;
+    width: 80%;
+    max-width: 320px;
+    height: calc(100vh - 78px);
+    background: var(--bg-alt);
+    border-left: 1px solid var(--border);
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 30px 24px;
+    gap: 22px;
+    transform: translateX(100%);
+    transition: transform var(--transition);
+  }
+  nav.primary.open { transform: translateX(0); }
+  nav.primary a { font-size: 1.05rem; }
+
+  .section { padding: 60px 0; }
+  .hero { min-height: 80vh; padding: 60px 20px; }
+  .prev { left: 6px; }
+  .next { right: 6px; }
+}
+
+@media (max-width: 420px) {
+  .stats { grid-template-columns: 1fr 1fr; }
+  .hero .actions .btn { width: 100%; }
+}
+
+/* Reveal animation */
+.reveal { opacity: 0; transform: translateY(24px); transition: opacity 0.7s ease, transform 0.7s ease; }
+.reveal.visible { opacity: 1; transform: translateY(0); }
+
+/* Accessibility */
+:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after { animation: none !important; transition: none !important; scroll-behavior: auto !important; }
+}
+</style>
+</head>
+
+<body>
+
+<header>
+  <div class="nav-wrap">
+    <a href="#top" aria-label="Meurez Maintenance home">
+      <img src="images/logo.png" class="logo" alt="Meurez Maintenance logo">
+    </a>
+    <button class="menu-toggle" aria-label="Menu openen" aria-expanded="false" aria-controls="primaryNav">&#9776;</button>
+    <nav class="primary" id="primaryNav" aria-label="Hoofdnavigatie">
+      <a href="#diensten">Diensten</a>
+      <a href="#over">Over ons</a>
+      <a href="#realisaties">Realisaties</a>
+      <a href="#galerij">Galerij</a>
+      <a href="#contact" class="btn">Contact</a>
+    </nav>
+  </div>
+</header>
+
+<main id="top">
+
+<section class="hero" aria-label="Welkom">
+  <div class="hero-inner">
+    <span class="eyebrow">Industriële werken · Anzegem</span>
+    <h1>Meurez Maintenance</h1>
+    <p>Sterk in zwaar werk. Nauwkeurig in afwerking. Uw partner voor industrieel onderhoud, laswerken en constructie in heel België.</p>
+    <div class="actions">
+      <a href="#contact" class="btn">Offerte aanvragen</a>
+      <a href="#diensten" class="btn ghost">Ontdek onze diensten</a>
+    </div>
+  </div>
+</section>
+
+<section id="over" class="section">
+  <div class="container">
+    <div class="about-grid reveal">
+      <img src="images/mechanic1.jpg" alt="Industriële mecanicien aan het werk">
+      <div class="about-text">
+        <span class="eyebrow">Over ons</span>
+        <h2>Vakmanschap &amp; Betrouwbaarheid</h2>
+        <p>Meurez Maintenance is gespecialiseerd in industrieel onderhoud, laswerken en constructiewerk. Wij leveren nauwkeurig maatwerk voor industriële bedrijven, met oog voor kwaliteit, veiligheid en deadlines.</p>
+        <p>Of het nu gaat om preventief onderhoud, dringende depannage of een volledig montageproject: u kan rekenen op korte lijnen, flexibele inzet en een eerlijke aanpak.</p>
+        <div class="stats">
+          <div class="stat"><strong>10+</strong><span>Jaar ervaring</span></div>
+          <div class="stat"><strong>100+</strong><span>Projecten</span></div>
+          <div class="stat"><strong>24/7</strong><span>Depannage</span></div>
+          <div class="stat"><strong>100%</strong><span>Maatwerk</span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="diensten" class="section dark">
+  <div class="container">
+    <div class="section-header reveal">
+      <span class="eyebrow">Wat wij doen</span>
+      <h2>Onze Diensten</h2>
+      <p class="section-subtitle">Een compleet aanbod voor industriële omgevingen – van laswerk en piping tot volledige constructies.</p>
+    </div>
+    <div class="grid reveal">
+      <article class="card">
+        <div class="icon" aria-hidden="true">🔧</div>
+        <h3>Onderhoud &amp; Herstellingen</h3>
+        <p>Preventief en curatief onderhoud van machines, installaties en industriële uitrusting.</p>
+      </article>
+      <article class="card">
+        <div class="icon" aria-hidden="true">⚙️</div>
+        <h3>Montage &amp; Demontage</h3>
+        <p>Professionele montage en demontage van productielijnen en industriële installaties.</p>
+      </article>
+      <article class="card">
+        <div class="icon" aria-hidden="true">🔥</div>
+        <h3>Laswerken &amp; Maatwerk</h3>
+        <p>TIG, MIG en elektrode laswerk op maat – voor staal, inox en aluminium.</p>
+      </article>
+      <article class="card">
+        <div class="icon" aria-hidden="true">🏭</div>
+        <h3>Industriële Plaatsingen</h3>
+        <p>Plaatsen en uitlijnen van machines, leidingen en industriële structuren.</p>
+      </article>
+      <article class="card">
+        <div class="icon" aria-hidden="true">🚨</div>
+        <h3>Depannage</h3>
+        <p>Snelle interventie bij storingen of pannes – beperk uw stilstand tot het minimum.</p>
+      </article>
+      <article class="card">
+        <div class="icon" aria-hidden="true">🏗️</div>
+        <h3>Constructiewerk</h3>
+        <p>Staalconstructies, frames en draagstructuren volgens uw plannen of specificaties.</p>
+      </article>
+      <article class="card">
+        <div class="icon" aria-hidden="true">🛠️</div>
+        <h3>Piping</h3>
+        <p>Aanleg, aanpassing en onderhoud van industriële leidingsystemen.</p>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section id="realisaties" class="section">
+  <div class="container">
+    <div class="section-header reveal">
+      <span class="eyebrow">Portfolio</span>
+      <h2>Realisaties</h2>
+      <p class="section-subtitle">Een greep uit onze recente projecten.</p>
+    </div>
+    <div class="gallery reveal">
+      <figure><img src="images/mechanic1.jpg" alt="Realisatie industrieel onderhoud 1" loading="lazy"></figure>
+      <figure><img src="images/mechanic2.jpg" alt="Realisatie industrieel onderhoud 2" loading="lazy"></figure>
+      <figure><img src="images/mechanic3.jpg" alt="Realisatie industrieel onderhoud 3" loading="lazy"></figure>
+      <figure><img src="images/mechanic4.jpg" alt="Realisatie industrieel onderhoud 4" loading="lazy"></figure>
+      <figure><img src="foto1.jpg" alt="Project foto 1" loading="lazy"></figure>
+      <figure><img src="foto2.jpg" alt="Project foto 2" loading="lazy"></figure>
+      <figure><img src="foto3.jpg" alt="Project foto 3" loading="lazy"></figure>
+      <figure><img src="foto4.jpg" alt="Project foto 4" loading="lazy"></figure>
+    </div>
+  </div>
+</section>
+
+<section id="galerij" class="section dark">
+  <div class="container">
+    <div class="section-header reveal">
+      <span class="eyebrow">Vakmanschap in beeld</span>
+      <h2>Laswerk &amp; Detail</h2>
+      <p class="section-subtitle">Scroll door onze selectie van laswerken en maatwerk.</p>
+    </div>
+
+    <div class="slider reveal" aria-roledescription="carousel" aria-label="Vakmanschap in beeld">
+      <button class="slider-btn prev" aria-label="Vorige afbeelding">&#10094;</button>
+
+      <div class="slide active" role="group" aria-label="Laswerk 1">
+        <img src="images/weld1.jpg" alt="Detail van laswerk 1" loading="lazy">
+      </div>
+      <div class="slide" role="group" aria-label="Laswerk 2">
+        <img src="images/weld2.jpg" alt="Detail van laswerk 2" loading="lazy">
+      </div>
+      <div class="slide" role="group" aria-label="Maatwerk 1">
+        <img src="foto1.jpg" alt="Industrieel maatwerk 1" loading="lazy">
+      </div>
+      <div class="slide" role="group" aria-label="Maatwerk 2">
+        <img src="foto2.jpg" alt="Industrieel maatwerk 2" loading="lazy">
+      </div>
+      <div class="slide" role="group" aria-label="Maatwerk 3">
+        <img src="foto3.jpg" alt="Industrieel maatwerk 3" loading="lazy">
+      </div>
+
+      <button class="slider-btn next" aria-label="Volgende afbeelding">&#10095;</button>
+    </div>
+    <div class="dots" role="tablist" aria-label="Slide navigatie"></div>
+  </div>
+</section>
+
+<section id="contact" class="section">
+  <div class="container">
+    <div class="section-header reveal">
+      <span class="eyebrow">Neem contact op</span>
+      <h2>Contact</h2>
+      <p class="section-subtitle">Vraag vrijblijvend uw offerte aan of stel uw vraag – wij nemen zo snel mogelijk contact met u op.</p>
+    </div>
+
+    <div class="contact-grid reveal">
+      <div class="contact-info">
+        <h3>Contactgegevens</h3>
+        <ul>
+          <li>
+            <span class="ico" aria-hidden="true">📞</span>
+            <div>
+              <strong>Telefoon</strong>
+              <a href="tel:+32471098720">+32 471 09 87 20</a>
+            </div>
+          </li>
+          <li>
+            <span class="ico" aria-hidden="true">✉️</span>
+            <div>
+              <strong>E-mail</strong>
+              <a href="mailto:jens.meurez@gmail.com">jens.meurez@gmail.com</a>
+            </div>
+          </li>
+          <li>
+            <span class="ico" aria-hidden="true">📍</span>
+            <div>
+              <strong>Adres</strong>
+              <a href="https://maps.google.com/?q=Mekeirleweg+19+8570+Anzegem" target="_blank" rel="noopener">Mekeirleweg 19, 8570 Anzegem</a>
+            </div>
+          </li>
+          <li>
+            <span class="ico" aria-hidden="true">🕒</span>
+            <div>
+              <strong>Openingsuren</strong>
+              Ma – Vr: 07:00 – 18:00<br>
+              Za – Zo: op afspraak
+            </div>
+          </li>
+        </ul>
+      </div>
+
+      <form id="contactForm" novalidate>
+        <label for="naam">Naam</label>
+        <input id="naam" name="naam" type="text" placeholder="Uw naam" required autocomplete="name">
+
+        <label for="email">E-mail</label>
+        <input id="email" name="email" type="email" placeholder="naam@voorbeeld.be" required autocomplete="email">
+
+        <label for="telefoon">Telefoon (optioneel)</label>
+        <input id="telefoon" name="telefoon" type="tel" placeholder="+32 ..." autocomplete="tel">
+
+        <label for="bericht">Uw bericht</label>
+        <textarea id="bericht" name="bericht" placeholder="Omschrijf kort uw vraag of project..." required></textarea>
+
+        <button type="submit" class="btn">Bericht verzenden</button>
+      </form>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer>
+  <div class="foot-links">
+    <a href="#diensten">Diensten</a>
+    <a href="#realisaties">Realisaties</a>
+    <a href="#galerij">Galerij</a>
+    <a href="#contact">Contact</a>
+  </div>
+  <p>&copy; <span id="year"></span> Meurez Maintenance · Mekeirleweg 19, 8570 Anzegem · Alle rechten voorbehouden.</p>
+</footer>
+
+<script>
+/* Jaar in footer */
+document.getElementById('year').textContent = new Date().getFullYear();
+
+/* Mobiel menu */
+const toggle = document.querySelector('.menu-toggle');
+const nav = document.querySelector('nav.primary');
+toggle.addEventListener('click', () => {
+  const isOpen = nav.classList.toggle('open');
+  toggle.setAttribute('aria-expanded', String(isOpen));
+});
+nav.querySelectorAll('a').forEach(a => a.addEventListener('click', () => {
+  nav.classList.remove('open');
+  toggle.setAttribute('aria-expanded', 'false');
+}));
+
+/* Slider */
+const slides = document.querySelectorAll('.slide');
+const dotsContainer = document.querySelector('.dots');
+let current = 0;
+let autoTimer;
+
+slides.forEach((_, i) => {
+  const b = document.createElement('button');
+  b.className = 'dot' + (i === 0 ? ' active' : '');
+  b.setAttribute('aria-label', 'Ga naar slide ' + (i + 1));
+  b.addEventListener('click', () => goTo(i));
+  dotsContainer.appendChild(b);
+});
+const dots = document.querySelectorAll('.dot');
+
+function goTo(i) {
+  slides[current].classList.remove('active');
+  if (dots[current]) dots[current].classList.remove('active');
+  current = (i + slides.length) % slides.length;
+  slides[current].classList.add('active');
+  if (dots[current]) dots[current].classList.add('active');
+  resetAuto();
+}
+document.querySelector('.next').addEventListener('click', () => goTo(current + 1));
+document.querySelector('.prev').addEventListener('click', () => goTo(current - 1));
+
+function resetAuto() {
+  clearInterval(autoTimer);
+  autoTimer = setInterval(() => goTo(current + 1), 6000);
+}
+resetAuto();
+
+/* Contactformulier */
+document.getElementById('contactForm').addEventListener('submit', function(e){
+  e.preventDefault();
+  if (!this.checkValidity()) {
+    this.reportValidity();
+    return;
+  }
+  alert('Bedankt! Uw bericht werd verzonden. Wij nemen zo snel mogelijk contact op.');
+  this.reset();
+});
+
+/* Reveal on scroll */
+const io = new IntersectionObserver(function(entries) {
+  entries.forEach(function(entry) {
+    if (entry.isIntersecting) {
+      entry.target.classList.add('visible');
+      io.unobserve(entry.target);
+    }
+  });
+}, { threshold: 0.12 });
+document.querySelectorAll('.reveal').forEach(function(el) { io.observe(el); });
+</script>
+
+</body>
+</html>
