@@ -971,15 +971,35 @@ function resetAuto() {
 }
 resetAuto();
 
-/* Contactformulier */
+/* Contactformulier -> mailto */
 document.getElementById('contactForm').addEventListener('submit', function(e){
   e.preventDefault();
   if (!this.checkValidity()) {
     this.reportValidity();
     return;
   }
-  alert('Bedankt! Uw bericht werd verzonden. Wij nemen zo snel mogelijk contact op.');
-  this.reset();
+
+  const naam     = document.getElementById('naam').value.trim();
+  const email    = document.getElementById('email').value.trim();
+  const telefoon = document.getElementById('telefoon').value.trim();
+  const bericht  = document.getElementById('bericht').value.trim();
+
+  const subject = 'Contactaanvraag via website - ' + naam;
+  const bodyLines = [
+    'Naam: '     + naam,
+    'E-mail: '   + email,
+    'Telefoon: ' + (telefoon || '-'),
+    '',
+    'Bericht:',
+    bericht
+  ];
+  const body = bodyLines.join('\r\n');
+
+  const mailto = 'mailto:jens.meurez@gmail.com'
+    + '?subject=' + encodeURIComponent(subject)
+    + '&body='    + encodeURIComponent(body);
+
+  window.location.href = mailto;
 });
 
 /* Reveal on scroll */
