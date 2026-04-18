@@ -91,7 +91,10 @@
   --transition: 0.3s ease;
 }
 
-html { scroll-behavior: smooth; }
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 90px;
+}
 
 body {
   background: var(--bg);
@@ -143,54 +146,81 @@ h2 {
 
 /* ---------- HEADER ---------- */
 header {
-  position: sticky;
+  position: fixed;
   top: 0;
+  left: 0;
+  right: 0;
   z-index: 1000;
-  background: rgba(11, 11, 12, 0.85);
-  backdrop-filter: saturate(160%) blur(10px);
-  -webkit-backdrop-filter: saturate(160%) blur(10px);
-  border-bottom: 1px solid var(--border);
+  background: linear-gradient(to bottom, rgba(11,11,12,0.75), rgba(11,11,12,0));
+  border-bottom: 1px solid transparent;
+  transition: background 0.35s ease, border-color 0.35s ease, box-shadow 0.35s ease, padding 0.35s ease;
+}
+
+header.scrolled {
+  background: rgba(11, 11, 12, 0.92);
+  backdrop-filter: saturate(160%) blur(14px);
+  -webkit-backdrop-filter: saturate(160%) blur(14px);
+  border-bottom-color: var(--border);
+  box-shadow: 0 6px 24px rgba(0,0,0,0.35);
 }
 
 .nav-wrap {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 14px 20px;
+  padding: 22px 28px;
   max-width: var(--maxw);
   margin: 0 auto;
+  transition: padding 0.35s ease;
+}
+
+header.scrolled .nav-wrap {
+  padding: 10px 28px;
 }
 
 .logo {
-  height: 50px;
+  height: 88px;
   width: auto;
+  transition: height 0.35s ease, filter 0.35s ease;
+  filter: drop-shadow(0 4px 14px rgba(0,0,0,0.5));
+}
+
+header.scrolled .logo {
+  height: 46px;
+  filter: drop-shadow(0 2px 6px rgba(0,0,0,0.4));
 }
 
 nav.primary {
   display: flex;
   align-items: center;
-  gap: 28px;
+  gap: 34px;
 }
 
 nav.primary a {
   color: var(--text);
   font-weight: 600;
-  font-size: 0.95rem;
+  font-size: 0.9rem;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
   position: relative;
+  padding: 6px 0;
   transition: color var(--transition);
 }
 
 nav.primary a:not(.btn)::after {
   content: '';
   position: absolute;
-  left: 0; bottom: -6px;
+  left: 50%;
+  bottom: 0;
   width: 0; height: 2px;
   background: var(--accent);
-  transition: width var(--transition);
+  transition: width var(--transition), left var(--transition);
 }
 
-nav.primary a:not(.btn):hover { color: var(--accent); }
-nav.primary a:not(.btn):hover::after { width: 100%; }
+nav.primary a:not(.btn):hover,
+nav.primary a:not(.btn).active { color: var(--accent); }
+nav.primary a:not(.btn):hover::after,
+nav.primary a:not(.btn).active::after { width: 100%; left: 0; }
 
 .btn {
   display: inline-block;
@@ -233,15 +263,15 @@ nav.primary a:not(.btn):hover::after { width: 100%; }
 
 /* ---------- HERO ---------- */
 .hero {
-  min-height: 92vh;
+  min-height: 100vh;
   background:
-    linear-gradient(rgba(0,0,0,0.75), rgba(0,0,0,0.85)),
+    linear-gradient(rgba(0,0,0,0.72), rgba(0,0,0,0.88)),
     url('images/mechanic2.jpg') center/cover no-repeat;
   display: flex;
   align-items: center;
   justify-content: center;
   text-align: center;
-  padding: 100px 20px;
+  padding: 140px 20px 120px;
   position: relative;
 }
 
@@ -267,6 +297,63 @@ nav.primary a:not(.btn):hover::after { width: 100%; }
 }
 
 .hero .actions { display: flex; gap: 14px; justify-content: center; flex-wrap: wrap; }
+
+/* Scroll indicator */
+.scroll-cue {
+  position: absolute;
+  bottom: 32px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  color: #e5e5e7;
+  font-size: 0.75rem;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  font-weight: 600;
+  opacity: 0.85;
+  transition: opacity var(--transition), transform var(--transition);
+}
+.scroll-cue:hover { opacity: 1; transform: translateX(-50%) translateY(-3px); }
+
+.scroll-mouse {
+  width: 26px;
+  height: 42px;
+  border: 2px solid rgba(255,255,255,0.75);
+  border-radius: 14px;
+  position: relative;
+}
+.scroll-mouse::before {
+  content: '';
+  position: absolute;
+  top: 8px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 3px;
+  height: 8px;
+  background: #fff;
+  border-radius: 2px;
+  animation: scroll-dot 1.8s ease-in-out infinite;
+}
+
+@keyframes scroll-dot {
+  0%   { opacity: 0; transform: translate(-50%, 0); }
+  30%  { opacity: 1; }
+  80%  { opacity: 0; transform: translate(-50%, 14px); }
+  100% { opacity: 0; transform: translate(-50%, 14px); }
+}
+
+.scroll-arrow {
+  font-size: 1.1rem;
+  animation: bounce 1.8s ease-in-out infinite;
+}
+@keyframes bounce {
+  0%, 100% { transform: translateY(0); }
+  50%      { transform: translateY(6px); }
+}
 
 /* ---------- SECTIONS ---------- */
 .section {
@@ -532,6 +619,11 @@ footer .foot-links a:hover { color: var(--accent); }
 
 @media (max-width: 720px) {
   .menu-toggle { display: block; }
+  .logo { height: 64px; }
+  header.scrolled .logo { height: 40px; }
+  .nav-wrap { padding: 14px 18px; }
+  header.scrolled .nav-wrap { padding: 8px 18px; }
+
   nav.primary {
     position: fixed;
     top: 78px;
@@ -549,10 +641,10 @@ footer .foot-links a:hover { color: var(--accent); }
     transition: transform var(--transition);
   }
   nav.primary.open { transform: translateX(0); }
-  nav.primary a { font-size: 1.05rem; }
+  nav.primary a { font-size: 1rem; letter-spacing: 1.5px; }
 
   .section { padding: 60px 0; }
-  .hero { min-height: 80vh; padding: 60px 20px; }
+  .hero { min-height: 90vh; padding: 100px 20px 80px; }
   .prev { left: 6px; }
   .next { right: 6px; }
 }
@@ -583,8 +675,8 @@ footer .foot-links a:hover { color: var(--accent); }
     </a>
     <button class="menu-toggle" aria-label="Menu openen" aria-expanded="false" aria-controls="primaryNav">&#9776;</button>
     <nav class="primary" id="primaryNav" aria-label="Hoofdnavigatie">
-      <a href="#diensten">Diensten</a>
       <a href="#over">Over ons</a>
+      <a href="#diensten">Diensten</a>
       <a href="#realisaties">Realisaties</a>
       <a href="#galerij">Galerij</a>
       <a href="#contact" class="btn">Contact</a>
@@ -604,6 +696,11 @@ footer .foot-links a:hover { color: var(--accent); }
       <a href="#diensten" class="btn ghost">Ontdek onze diensten</a>
     </div>
   </div>
+  <a href="#over" class="scroll-cue" aria-label="Scroll naar beneden">
+    <span>Scroll</span>
+    <span class="scroll-mouse" aria-hidden="true"></span>
+    <span class="scroll-arrow" aria-hidden="true">&#8964;</span>
+  </a>
 </section>
 
 <section id="over" class="section">
@@ -793,6 +890,7 @@ footer .foot-links a:hover { color: var(--accent); }
 
 <footer>
   <div class="foot-links">
+    <a href="#over">Over ons</a>
     <a href="#diensten">Diensten</a>
     <a href="#realisaties">Realisaties</a>
     <a href="#galerij">Galerij</a>
@@ -804,6 +902,30 @@ footer .foot-links a:hover { color: var(--accent); }
 <script>
 /* Jaar in footer */
 document.getElementById('year').textContent = new Date().getFullYear();
+
+/* Shrinking header on scroll */
+const header = document.querySelector('header');
+function onScroll() {
+  if (window.scrollY > 60) header.classList.add('scrolled');
+  else header.classList.remove('scrolled');
+}
+window.addEventListener('scroll', onScroll, { passive: true });
+onScroll();
+
+/* Actieve nav-link hooglichten via scroll-spy */
+const sections = document.querySelectorAll('main section[id]');
+const navLinks = document.querySelectorAll('nav.primary a[href^="#"]');
+const spy = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      const id = entry.target.getAttribute('id');
+      navLinks.forEach(l => {
+        l.classList.toggle('active', l.getAttribute('href') === '#' + id);
+      });
+    }
+  });
+}, { rootMargin: '-45% 0px -50% 0px', threshold: 0 });
+sections.forEach(s => spy.observe(s));
 
 /* Mobiel menu */
 const toggle = document.querySelector('.menu-toggle');
